@@ -19,8 +19,8 @@ function AddCuve({ history }) {
       .nullable()
       .typeError("Saisissez un nombre")
       .required("capacité  est obligatoire")
-      .test("qtePositive", "Pas de quantité Négative", (number) => number > 0)
-      .min(2, "Deux Chiffres au moins"),
+      .test("qtePositive", "Pas de quantité Négative", (number) => number > 0),
+    // .min(2, "Deux Chiffres au moins"),
     quantityCurrentCuve: Yup.number()
       .transform((currentValue, originalValue) => {
         return originalValue === "" ? null : currentValue;
